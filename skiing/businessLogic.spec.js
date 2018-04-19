@@ -16,7 +16,7 @@ describe('businessLogic.getLongestPaths - good cases', function () {
 
     it('stress test for 1000x1000', function () {
 
-        this.timeout(10000);
+        this.timeout(5000);
         const bigMatrix = getRandomMatrix(1000, 10000);
         const actualOutput = businessLogic.getLongestPaths(bigMatrix);
         assert.notEqual(false, actualOutput);

@@ -46,3 +46,23 @@ describe('matrixHelper.getCoordinatesListFromMatrix - edge cases', function () {
     });
 
 });
+
+describe('matrixHelper.fillWithDummyValues - good cases', function () {
+
+    it('filling matrix', function () {
+        const actualOutput = matrixHelper.fillWithDummyValues(4);
+        assert.deepEqual(actualOutput, [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]]);
+    });
+
+});
+
+describe('matrixHelper.fillWithDummyValues - edge cases', function () {
+
+    it('zero as parameter', function () {
+
+        const actualOutput = matrixHelper.fillWithDummyValues(0);
+        assert.deepEqual(actualOutput, []);
+
+    });
+
+});

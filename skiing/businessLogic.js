@@ -1,7 +1,4 @@
 const matrixHelper = require("./matrixHelper");
-const logger = require("./logger");
-
-
 
 const getLongestPaths = matrix => {
 
@@ -17,11 +14,15 @@ const getLongestPaths = matrix => {
                 // If value on checked side is smaller
                 if (matrix[next_i][next_j] < matrix[i][j]) {
                     // Recursive call for each possible direction - with new coordinates
-                    const obj = getAllPathsFromPoint(next_i, next_j);
-                    if (obj.pathLength > longestPathSize) {
+                    // If the path was already calculated - take it from cache
+                    if (memoized[next_i][next_j] === -1) {
+                        memoized[next_i][next_j] = getAllPathsFromPoint(next_i, next_j);
+                    }
+                    const memoizedNext = memoized[next_i][next_j];
+                    if (memoizedNext.pathLength > longestPathSize) {
                         // Save new path element, if the new path is longer than current longest path
-                        longestPathSize = obj.pathLength;
-                        path = obj.path;
+                        longestPathSize = memoizedNext.pathLength;
+                        path = memoizedNext.path;
                     }
                 }
             }
@@ -35,6 +36,7 @@ const getLongestPaths = matrix => {
 
     const N = matrix.length;
     const possibleDirections = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+    let memoized = matrixHelper.fillWithDummyValues(N);
 
     // For each coordinate in a matrix, get all possible decreasing paths
     const coordinatesList = matrixHelper.getCoordinatesListFromMatrix(matrix);
