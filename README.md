@@ -4,8 +4,8 @@ Please place your matrix in the skiing.js file as the **input** variable.
 
 ## Running the algorithm
 
-_$ npm i_
-_$ node skiing.js_
+	$ npm i
+	$ node skiing.js
 
 This will output the results to STDOUT in the following format:
 
@@ -20,7 +20,7 @@ This will output the results to STDOUT in the following format:
 
 ## Running tests
 
-_$ mocha *.spec.js*
+	$ mocha *.spec.js*
 
 ## Description
 
