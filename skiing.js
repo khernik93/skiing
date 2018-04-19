@@ -1,5 +1,5 @@
-const logger = require("./logger");
-const businessLogic = require("./businessLogic");
+const logger = require("./skiing/logger");
+const businessLogic = require("./skiing/businessLogic");
 
 const input = [
     [51,39,64,4,42,15,23,35],
@@ -11,6 +11,11 @@ const input = [
     [89,24,71,24,93,79,23,71],
     [76,14,43,86,73,19,47,71],
 ];
+
+if (input.length < 50) {
+	logger.ok("Input matrix:");
+	logger.comment(input);
+}
 
 const longestPaths = businessLogic.getLongestPaths(input);
 logger.ok(`Found ${longestPaths.length} longest paths`);
