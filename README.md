@@ -4,6 +4,7 @@ Please place your matrix in the skiing.js file as the **input** variable.
 
 ## Running the algorithm
 
+_$ npm i_
 _$ node skiing.js_
 
 This will output the results to STDOUT in the following format:
@@ -16,6 +17,10 @@ This will output the results to STDOUT in the following format:
      [ { startingPoint: '(3, 1)',
         pathLength: 7,
         path: [ 98, 91, 65, 63, 40, 24, 14 ] } ] 
+
+## Running tests
+
+_$ mocha *.spec.js*
 
 ## Description
 
