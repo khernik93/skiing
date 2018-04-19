@@ -20,7 +20,7 @@ This will output the results to STDOUT in the following format:
 
 ## Running tests
 
-	$ mocha *.spec.js*
+	$ npm run test
 
 ## Description
 

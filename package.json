@@ -4,7 +4,7 @@
   "description": "Please place your matrix in the skiing.js file as the **input** variable.",
   "main": "skiing.js",
   "scripts": {
-    "test": "mocha *.spec.js"
+    "test": "mocha skiing/*.spec.js"
   },
   "repository": {
     "type": "git",
